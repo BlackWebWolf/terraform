@@ -1,0 +1,25 @@
+{
+    "TargetGroups": [
+        {
+            "HealthCheckPath": "/", 
+            "HealthCheckIntervalSeconds": 30, 
+            "VpcId": "vpc-1b7e4873", 
+            "Protocol": "HTTP", 
+            "HealthCheckTimeoutSeconds": 5, 
+            "TargetType": "instance", 
+            "HealthCheckProtocol": "HTTP", 
+            "LoadBalancerArns": [
+                "arn:aws:elasticloadbalancing:eu-central-1:987948519449:loadbalancer/app/acc-acc/03467fed8420b9b8"
+            ], 
+            "UnhealthyThresholdCount": 2, 
+            "HealthyThresholdCount": 5, 
+            "TargetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:987948519449:targetgroup/acc-acc-secondary/eb761b77818cf683", 
+            "Matcher": {
+                "HttpCode": "200"
+            }, 
+            "HealthCheckPort": "traffic-port", 
+            "Port": 80, 
+            "TargetGroupName": "acc-acc-secondary"
+        }
+    ]
+}

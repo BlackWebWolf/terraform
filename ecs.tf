@@ -1,12 +1,12 @@
 provider "aws" {
-  region = "eu-west-1"
+  region = "eu-central-1"
 }
 
 module "ecs" {
   source = "modules/ecs"
 
   environment          = "${var.environment}"
-  cluster              = "${var.environment}"
+  cluster              = "${var.cluster}"
   cloudwatch_prefix    = "${var.environment}"           #See ecs_instances module when to set this and when not!
   vpc_cidr             = "${var.vpc_cidr}"
   public_subnet_cidrs  = "${var.public_subnet_cidrs}"
@@ -19,10 +19,13 @@ module "ecs" {
   instance_type        = "${var.instance_type}"
   ecs_aws_ami          = "${var.ecs_aws_ami}"
 }
+# module "users" {
+#   source = "modules/users"
+# }
 
 resource "aws_key_pair" "ecs" {
   key_name   = "ecs-key-${var.environment}"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCtMljjj0Ccxux5Mssqraa/iHHxheW+m0Rh17fbd8t365y9EwBn00DN/0PjdU2CK6bjxwy8BNGXWoUXiSDDtGqRupH6e9J012yE5kxhpXnnkIcLGjkAiflDBVV4sXS4b3a2LSXL5Dyb93N2GdnJ03FJM4qDJ8lfDQxb38eYHytZkmxW14xLoyW5Hbyr3SXhdHC2/ecdp5nLNRwRWiW6g9OA6jTQ3LgeOZoM6dK4ltJUQOakKjiHsE+jvmO0hJYQN7+5gYOw0HHsM+zmATvSipAWzoWBWcmBxAbcdW0R0KvCwjylCyRVbRMRbSZ/c4idZbFLZXRb7ZJkqNJuy99+ld41 ecs@aws.fake"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDmgSGbbltEAUJxVMiA0rr5xU2k9Gwr/EeuZLurHfSwreIuWxmS8dl5ETVDj+00l17uMzGaq2f6k1YOeDfIuPIHoSF7rHIHjrTBIXfGNqWoD5kMXPkaiU8f6V4IroC1gyH8ZTUV5TJlzg9ekila+cGTeh3m1ODBzoxjJ+S4+nh338aIt98UEN5nevpF+G/Z1zuILsqnJ5p6M0MgkR5B6nuXE1iYk36xEnh1D/2TQ2LCDhRLfUbHJKn+bdF/nuACwcindT1R02PNWC6+yndpKBUt34oOGt+bZNnZ362/OOoU2DBYzQmVOSiokYIrrNwUQF3scbLQSatqg5ymF0+dZynf wilq@WilqHive"
 }
 
 variable "vpc_cidr" {}
@@ -32,6 +35,7 @@ variable "min_size" {}
 variable "desired_capacity" {}
 variable "instance_type" {}
 variable "ecs_aws_ami" {}
+variable "cluster" {}
 
 variable "private_subnet_cidrs" {
   type = "list"

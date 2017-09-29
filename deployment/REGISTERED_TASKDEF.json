@@ -1,0 +1,29 @@
+{
+    "taskDefinition": {
+        "status": "ACTIVE", 
+        "family": "nginx", 
+        "placementConstraints": [], 
+        "volumes": [], 
+        "taskDefinitionArn": "arn:aws:ecs:eu-central-1:987948519449:task-definition/nginx:28", 
+        "containerDefinitions": [
+            {
+                "environment": [], 
+                "name": "nginx", 
+                "mountPoints": [], 
+                "image": "nginx:latest", 
+                "cpu": 0, 
+                "portMappings": [
+                    {
+                        "protocol": "tcp", 
+                        "containerPort": 80, 
+                        "hostPort": 0
+                    }
+                ], 
+                "memory": 128, 
+                "essential": true, 
+                "volumesFrom": []
+            }
+        ], 
+        "revision": 28
+    }
+}

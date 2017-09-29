@@ -1,0 +1,40 @@
+{
+    "service": {
+        "status": "ACTIVE", 
+        "taskDefinition": "arn:aws:ecs:eu-central-1:987948519449:task-definition/nginx:28", 
+        "pendingCount": 0, 
+        "loadBalancers": [
+            {
+                "containerName": "nginx", 
+                "targetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:987948519449:targetgroup/acc-acc-secondary/eb761b77818cf683", 
+                "containerPort": 80
+            }
+        ], 
+        "roleArn": "arn:aws:iam::987948519449:role/ecs/acc_ecs_lb_role", 
+        "placementConstraints": [], 
+        "createdAt": 1506522530.519, 
+        "desiredCount": 1, 
+        "serviceName": "nginx", 
+        "clusterArn": "arn:aws:ecs:eu-central-1:987948519449:cluster/acc", 
+        "serviceArn": "arn:aws:ecs:eu-central-1:987948519449:service/nginx", 
+        "deploymentConfiguration": {
+            "maximumPercent": 100, 
+            "minimumHealthyPercent": 0
+        }, 
+        "deployments": [
+            {
+                "status": "PRIMARY", 
+                "pendingCount": 0, 
+                "createdAt": 1506522530.519, 
+                "desiredCount": 1, 
+                "taskDefinition": "arn:aws:ecs:eu-central-1:987948519449:task-definition/nginx:28", 
+                "updatedAt": 1506522530.519, 
+                "id": "ecs-svc/9223370530332245282", 
+                "runningCount": 0
+            }
+        ], 
+        "events": [], 
+        "runningCount": 0, 
+        "placementStrategy": []
+    }
+}

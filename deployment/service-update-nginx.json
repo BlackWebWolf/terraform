@@ -1,7 +1,7 @@
 {
-    "cluster": "test",
+    "cluster": "acc",
     "service": "nginx",
-    "taskDefinition": "@@TASKDEFINITION_ARN@@",
+    "taskDefinition": @@TASKDEFINITION_ARN@@,
     "desiredCount": 1,
     "deploymentConfiguration": {
         "maximumPercent": 100,

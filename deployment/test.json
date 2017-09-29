@@ -1,0 +1,14 @@
+{
+    "serviceName": "ecs-simple-service-elb",
+    "taskDefinition": "nginx",
+    "cluster": "acc",
+    "loadBalancers": [
+        {
+            "targetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:987948519449:targetgroup/webservers/99f774c985efd970",
+            "containerName": "nginx",
+            "containerPort": 80
+        }
+    ],
+    "desiredCount": 1,
+    "role": "testing_what_de_fuck"
+}

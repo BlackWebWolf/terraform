@@ -1,10 +1,10 @@
 {
     "cluster": "acc",
     "serviceName": "nginx",
-    "taskDefinition": @@TASKDEFINITION_ARN@@,
+    "taskDefinition": "arn:aws:ecs:eu-central-1:987948519449:task-definition/nginx:28",
     "loadBalancers": [
         {
-            "targetGroupArn": @@TARGET_GROUP_ARN@@,
+            "targetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:987948519449:targetgroup/acc-acc-secondary/eb761b77818cf683",
             "containerName": "nginx",
             "containerPort": 80
         }

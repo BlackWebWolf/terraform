@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "nginx",
-      "image": "@VERSION@",
+      "image": "nginx:latest",
       "memory": 128,
       "portMappings": [
         {

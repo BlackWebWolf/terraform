@@ -1,7 +1,7 @@
 {
     "cluster": "acc",
     "serviceName": "nginx",
-    "taskDefinition": @@TASKDEFINITION_ARN@@,
+    "taskDefinition": "arn:aws:ecs:eu-central-1:987948519449:task-definition/nginx:28",
     "loadBalancers": [
         {
             "targetGroupArn": @@TARGET_GROUP_ARN@@,

@@ -30,3 +30,12 @@ variable "allow_cidr_block" {
   default     = "0.0.0.0/0"
   description = "Specify cird block that is allowd to acces the LoadBalancer"
 }
+variable "target_group_names" {
+  default = {
+    "0" = "default0", 
+    "1" = "default1"
+  }
+}
+# variable "target_groups_count" {
+#   default = 2
+# }

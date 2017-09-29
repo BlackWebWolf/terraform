@@ -49,7 +49,7 @@ variable "iam_instance_profile_id" {
   description = "The id of the instance profile that should be used for the instances"
 }
 
-variable "private_subnet_ids" {
+variable "public_subnet_ids" {
   type        = "list"
   description = "The list of private subnets to place the instances in"
 }
@@ -60,9 +60,9 @@ variable "load_balancers" {
   description = "The load balancers to couple to the instances. Only used when NOT using ALB"
 }
 
-variable "depends_id" {
-  description = "Workaround to wait for the NAT gateway to finish before starting the instances"
-}
+# variable "depends_id" {
+#   description = "Workaround to wait for the NAT gateway to finish before starting the instances"
+# }
 
 variable "key_name" {
   description = "SSH key name to be used"
