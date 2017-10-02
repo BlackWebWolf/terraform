@@ -52,7 +52,7 @@ resource "aws_autoscaling_group" "asg" {
   desired_capacity     = "${var.desired_capacity}"
   force_delete         = true
   launch_configuration = "${aws_launch_configuration.launch.id}"
-  vpc_zone_identifier  = ["${var.public_subnet_ids}"]
+  vpc_zone_identifier  = ["${var.private_subnet_ids}"]
   load_balancers       = ["${var.load_balancers}"]
 
   tag {
@@ -81,11 +81,11 @@ resource "aws_autoscaling_group" "asg" {
 
   # EC2 instances require internet connectivity to boot. Thus EC2 instances must not start before NAT is available.
   # For info why see description in the network module.
-  # tag {
-  #   key                 = "DependsId"
-    # value               = "${var.depends_id}"
-  #   propagate_at_launch = "false"
-  # }
+  tag {
+    key                 = "DependsId"
+    value               = "${var.depends_id}"
+    propagate_at_launch = "false"
+ }
 }
 
 data "template_file" "user_data" {

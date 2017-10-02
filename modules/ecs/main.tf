@@ -14,7 +14,7 @@ module "ecs_instances" {
   environment             = "${var.environment}"
   cluster                 = "${var.cluster}"
   instance_group          = "${var.instance_group}"
-  public_subnet_ids      = "${module.network.public_subnet_ids}"
+  private_subnet_ids      = "${module.network.private_subnet_ids}"
   aws_ami                 = "${var.ecs_aws_ami}"
   instance_type           = "${var.instance_type}"
   max_size                = "${var.max_size}"
@@ -24,7 +24,7 @@ module "ecs_instances" {
   iam_instance_profile_id = "${aws_iam_instance_profile.ecs.id}"
   key_name                = "${var.key_name}"
   load_balancers          = "${var.load_balancers}"
-  # depends_id              = "${module.network.depends_id}"
+  depends_id              = "${module.network.depends_id}"
   custom_userdata         = "${var.custom_userdata}"
   cloudwatch_prefix       = "${var.cloudwatch_prefix}"
 }
